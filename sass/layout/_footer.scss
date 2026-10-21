@@ -1,0 +1,47 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+// ==== FOOTER ====
+
+footer {
+    background-color: $color-footer-bg;
+    margin-top: 0.1%;
+    padding: 1.25rem;
+
+    @include flex($justify: space-between, $align: center, $gap: 1.25rem);
+    flex-direction: column;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 1.75rem 2.5rem;
+    }
+
+    h2 {
+        @include heading-font(1.25rem, $color-gray);
+    }
+
+    div {
+        ul {
+            color: $color-gray;
+            list-style-type: disc;
+            padding-left: 1.25rem;
+
+            li a {
+                color: $color-gray-link;
+                text-decoration: none;
+
+                @include heading-font(0.9rem);
+            }
+        }
+
+        p {
+            @include body-font(0.6rem, $color-gray-text);
+        }
+    }
+}

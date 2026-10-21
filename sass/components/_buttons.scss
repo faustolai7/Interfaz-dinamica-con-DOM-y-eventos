@@ -1,0 +1,28 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+// ==== BOTONES ====
+
+.btn-neon {
+    background-color: $color-neon;
+   
+    border: none;
+
+    @include heading-font;
+    @include transition;
+    color: black;
+    &:hover {
+        background-color: lighten($color-neon, 10%);
+        color: black;
+        transform: translateY(-2px);
+        animation: neonPulse 1.4s ease-in-out infinite;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 1.05rem;
+    }
+}

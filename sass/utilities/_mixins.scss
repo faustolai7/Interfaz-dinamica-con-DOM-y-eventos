@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+
+@mixin heading-font($size: inherit, $color: inherit) {
+    font-family: $font-heading;
+    font-size: $size;
+    color: $color;
+}
+
+
+@mixin body-font($size: inherit, $color: inherit) {
+    font-family: $font-body;
+    font-size: $size;
+    color: $color;
+}
+
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+
+@mixin contained($max-width: 400px) {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+
+@mixin neon-focus($color: $color-neon, $bg: $color-bg-input) {
+    &:focus {
+        background-color: $bg;
+        color: $color;
+        border-color: $color;
+        box-shadow: none;
+    }
+}
+
+
+@mixin transition($props: all, $duration: 0.3s, $ease: ease-in-out) {
+    transition: $props $duration $ease;
+}

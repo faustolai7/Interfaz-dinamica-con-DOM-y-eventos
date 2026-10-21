@@ -1,0 +1,104 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+// ==== MAIN ====
+
+main {
+    background-color: $color-bg-dark;
+    flex: 1;
+
+    section {
+        margin-top: 1.56rem;
+    }
+
+
+    h1 {
+        text-align: center;
+
+        @include heading-font(1.75rem, $color-neon);
+    }
+
+    @media (min-width: 768px) {
+        section {
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        section {
+            margin-top: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+        }
+    }
+}
+
+.secindex {
+    margin-top: 0%;
+    min-height: 100vh; 
+    background-image: url(../img/opcion_1_timbo_mobile.jpg);
+    background-size: cover;
+    background-position: center 95%;
+    background-repeat: no-repeat;
+    animation: fadeIn 0.8s ease-out;
+
+    @media (min-width: 768px) {
+        background-image: url(../img/opcion_1_timbo_tablet.jpg);
+    }
+
+    @media (min-width: 1024px) {
+        background-image: url(../img/opcion2_timbohardware.jpg);
+        background-position: center 80%;
+    }
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeIn 0.8s ease-out;
+
+}
+
+// ==== CONTACTO ====
+
+.maincontact {
+    background-color: $color-bg-dark;
+    color: $color-neon;
+    text-align: center;
+
+    section iframe {
+        border: 0;
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 1.8rem;
+
+        @media (min-width: 768px) {
+            margin-top: 2.2rem;
+        }
+    }
+}
+
+.h2contact {
+    margin-bottom: 1.25rem;
+
+    @include heading-font(1.75rem, $color-neon);
+
+    @media (min-width: 768px) {
+        font-size: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 2.25rem;
+    }
+}

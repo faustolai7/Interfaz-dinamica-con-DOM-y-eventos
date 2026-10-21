@@ -1,0 +1,710 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(57, 255, 20, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(57, 255, 20, 0.85);
+  }
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to bottom, #000000, #111111);
+}
+header .navbar-custom {
+  background: linear-gradient(to bottom, #000000, #111111);
+  padding: 0.9rem 0.3rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: inherit;
+  color: inherit;
+}
+header .navbar-custom .navbar-brand {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  color: inherit;
+}
+header .navbar-custom .navbar-brand img {
+  width: 2.8rem;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+}
+header .navbar-custom .navbar-brand:hover img {
+  transform: rotate(-8deg) scale(1.08);
+}
+header .navbar-custom .nav-link {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  color: #39FF14;
+  transition: all 0.3s ease-in-out;
+}
+header .navbar-custom .nav-link:hover {
+  opacity: 0.75;
+  transform: translateY(-2px);
+}
+header .navbar-custom .nav-link.active {
+  text-decoration: underline;
+}
+header .title {
+  color: #39FF14;
+}
+@media (min-width: 768px) {
+  header .navbar-custom {
+    padding: 1.1rem 2rem;
+  }
+  header .navbar-custom .navbar-brand {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.3rem;
+    color: inherit;
+  }
+  header .navbar-custom .navbar-brand img {
+    width: 3.2rem;
+  }
+  header .navbar-custom .nav-link {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  header .navbar-custom {
+    padding: 1.25rem 2.5rem;
+  }
+  header .navbar-custom .navbar-brand {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.6rem;
+    color: inherit;
+  }
+  header .navbar-custom .navbar-brand img {
+    width: 3.5rem;
+  }
+  header .navbar-custom .nav-link {
+    font-size: 1.3rem;
+  }
+}
+
+main {
+  background-color: #111111;
+  flex: 1;
+}
+main section {
+  margin-top: 1.56rem;
+}
+main h1 {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.75rem;
+  color: #39FF14;
+}
+@media (min-width: 768px) {
+  main section {
+    margin-top: 2rem;
+  }
+  main h1 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  main section {
+    margin-top: 2.5rem;
+  }
+  main h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.secindex {
+  margin-top: 0%;
+  min-height: 100vh;
+  background-image: url(../img/opcion_1_timbo_mobile.jpg);
+  background-size: cover;
+  background-position: center 95%;
+  background-repeat: no-repeat;
+  animation: fadeIn 0.8s ease-out;
+}
+@media (min-width: 768px) {
+  .secindex {
+    background-image: url(../img/opcion_1_timbo_tablet.jpg);
+  }
+}
+@media (min-width: 1024px) {
+  .secindex {
+    background-image: url(../img/opcion2_timbohardware.jpg);
+    background-position: center 80%;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.maincontact {
+  background-color: #111111;
+  color: #39FF14;
+  text-align: center;
+}
+.maincontact section iframe {
+  border: 0;
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 1.8rem;
+}
+@media (min-width: 768px) {
+  .maincontact section iframe {
+    margin-top: 2.2rem;
+  }
+}
+
+.h2contact {
+  margin-bottom: 1.25rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.75rem;
+  color: #39FF14;
+}
+@media (min-width: 768px) {
+  .h2contact {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .h2contact {
+    font-size: 2.25rem;
+  }
+}
+
+footer {
+  background-color: #CCCCCC;
+  margin-top: 0.1%;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  flex-direction: column;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    text-align: left;
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    padding: 1.75rem 2.5rem;
+  }
+}
+footer h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.25rem;
+  color: gray;
+}
+footer div ul {
+  color: gray;
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+footer div ul li a {
+  color: rgb(128, 128, 128);
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.9rem;
+  color: inherit;
+}
+footer div p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.6rem;
+  color: #808080;
+}
+
+.btn-neon {
+  background-color: #39FF14;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: inherit;
+  color: inherit;
+  transition: all 0.3s ease-in-out;
+  color: black;
+}
+.btn-neon:hover {
+  background-color: rgb(39.2040050063%, 100%, 27.8431372549%);
+  color: black;
+  transform: translateY(-2px);
+  animation: neonPulse 1.4s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .btn-neon {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .btn-neon {
+    font-size: 1.05rem;
+  }
+}
+
+.maincontact form {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  align-items: center;
+}
+.maincontact form fieldset {
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .maincontact form {
+    max-width: 34rem;
+  }
+}
+@media (min-width: 1024px) {
+  .maincontact form {
+    max-width: 38rem;
+  }
+}
+
+.form-control {
+  background-color: #1a1a1a;
+  color: #39FF14;
+  border: 1px solid #39FF14;
+}
+.form-control:focus {
+  background-color: #1a1a1a;
+  color: #39FF14;
+  border-color: #39FF14;
+  box-shadow: none;
+}
+.form-control::placeholder {
+  color: #777777;
+}
+
+.producto {
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+}
+.producto:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 0.9rem rgba(57, 255, 20, 0.5);
+}
+@media (min-width: 768px) {
+  .producto {
+    max-width: 28rem;
+  }
+}
+
+.grid-productos > div {
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+@media (min-width: 768px) {
+  .grid-productos > div {
+    max-width: 28rem;
+    padding: 1.5rem;
+  }
+}
+
+main figure img {
+  border-radius: 0.9rem;
+}
+main figure figcaption {
+  margin-left: 1.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-family: "Roboto", sans-serif;
+  font-size: inherit;
+  color: rgb(255, 255, 255);
+}
+main figure p {
+  margin-left: 1.25rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  color: rgb(255, 255, 255);
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-areas: "producto1" "producto2";
+  gap: 1.8rem;
+  padding: 1.25rem;
+}
+.grid-productos > div:nth-child(1) {
+  grid-area: producto1;
+}
+.grid-productos > div:nth-child(2) {
+  grid-area: producto2;
+}
+@media (min-width: 768px) {
+  .grid-productos {
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-productos {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "producto1 producto2";
+  }
+}
+
+
+:root {
+    --neon: #39ff14;
+    --fondo-panel: #1a1a1a;
+    --fondo-campo: #0d0d0d;
+    --texto: #ffffff;
+    --texto-suave: #a8a8a8;
+    --error: #ff5c5c;
+}
+
+.simulador,
+.simulador *,
+.simulador *::before,
+.simulador *::after {
+    box-sizing: border-box;
+}
+
+.simulador {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    color: var(--texto);
+    font-family: "Roboto", sans-serif;
+}
+
+.simulador h2 {
+    margin-bottom: 1rem;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.15rem;
+    color: var(--neon);
+}
+
+.mensaje {
+    position: sticky;
+    top: 0.75rem;
+    z-index: 5;
+    margin: 1.25rem 0;
+    padding: 0.8rem 1rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--neon);
+    background-color: #0d2b08;
+    color: var(--texto);
+    font-weight: 500;
+    overflow-wrap: break-word;
+}
+
+.mensaje:empty {
+    display: none;
+}
+
+.mensaje.error {
+    border-color: var(--error);
+    background-color: #3a1212;
+}
+
+.paneles {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.panel {
+    padding: 1.25rem;
+    border: 1px solid rgba(57, 255, 20, 0.35);
+    border-radius: 0.9rem;
+    background-color: var(--fondo-panel);
+}
+
+.campo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.campo-separado {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed rgba(57, 255, 20, 0.35);
+}
+
+.campos-doble {
+    display: grid;
+    gap: 0 1rem;
+}
+
+.simulador input,
+.simulador select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--neon);
+    border-radius: 0.5rem;
+    background-color: var(--fondo-campo);
+    color: var(--neon);
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+}
+
+.simulador input::placeholder {
+    color: #6f6f6f;
+}
+
+.simulador input:focus,
+.simulador select:focus {
+    outline: none;
+    box-shadow: 0 0 0.6rem rgba(57, 255, 20, 0.6);
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.boton {
+    padding: 0.65rem 1.1rem;
+    border: 1px solid var(--neon);
+    border-radius: 0.5rem;
+    background-color: var(--neon);
+    color: #000000;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 0.9rem rgba(57, 255, 20, 0.7);
+}
+
+.boton:active {
+    transform: translateY(0);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--neon);
+}
+
+.boton-secundario:hover {
+    background-color: rgba(57, 255, 20, 0.15);
+}
+
+.boton-peligro {
+    border-color: var(--error);
+    background-color: transparent;
+    color: var(--error);
+}
+
+.boton-peligro:hover {
+    background-color: rgba(255, 92, 92, 0.15);
+    box-shadow: 0 0 0.9rem rgba(255, 92, 92, 0.6);
+}
+
+.resumen p {
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
+}
+
+.resumen strong {
+    color: var(--neon);
+}
+
+.aviso-ok {
+    color: var(--neon);
+}
+
+.aviso-error {
+    color: var(--error);
+}
+
+.catalogo {
+    margin-top: 2rem;
+}
+
+.barra-filtros {
+    display: grid;
+    gap: 0 1rem;
+    align-items: end;
+    padding: 1.25rem 1.25rem 0.25rem;
+    border: 1px solid rgba(57, 255, 20, 0.35);
+    border-radius: 0.9rem;
+    background-color: var(--fondo-panel);
+}
+
+.botones-filtro {
+    margin-bottom: 1rem;
+}
+
+.contador {
+    margin: 1rem 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.grilla-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.tarjeta {
+    position: relative;
+    padding: 1.25rem;
+    border: 1px solid rgba(57, 255, 20, 0.35);
+    border-radius: 0.9rem;
+    background-color: var(--fondo-panel);
+    transition: all 0.3s ease-in-out;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 0.9rem rgba(57, 255, 20, 0.5);
+}
+
+.tarjeta h3 {
+    margin: 1.6rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto);
+    overflow-wrap: break-word;
+}
+
+.tarjeta p {
+    margin-bottom: 0.35rem;
+}
+
+.posicion {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    padding: 0.1rem 0.55rem;
+    border: 1px solid var(--neon);
+    border-radius: 1rem;
+    color: var(--neon);
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.75rem;
+}
+
+.categoria {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+
+.precio {
+    color: var(--neon);
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.25rem;
+}
+
+.stock {
+    color: var(--texto);
+    font-size: 0.95rem;
+}
+
+.stock.agotado {
+    color: var(--error);
+    font-weight: 700;
+}
+
+.vacio {
+    grid-column: 1 / -1;
+    padding: 1.5rem;
+    border: 1px dashed var(--texto-suave);
+    border-radius: 0.9rem;
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .simulador {
+        padding: 1.5rem;
+    }
+
+    .simulador h2 {
+        font-size: 1.3rem;
+    }
+
+    .paneles {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .panel-formulario {
+        grid-row: span 2;
+    }
+
+    .campos-doble {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .barra-filtros {
+        grid-template-columns: 2fr 1fr auto;
+    }
+
+    .grilla-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .simulador {
+        padding: 2rem;
+    }
+
+    .grilla-tarjetas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*# sourceMappingURL=styles.css.map */

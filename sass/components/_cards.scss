@@ -1,0 +1,80 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+// ==== CARDS / PRODUCTOS ====
+
+.producto {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    @include transition;
+
+    &:hover {
+        transform: scale(1.04);
+        box-shadow: 0 0 0.9rem rgba($color-neon, 0.5);
+    }
+
+    @media (min-width: 768px) {
+        max-width: 28rem;
+    }
+}
+
+.grid-productos > div {
+    @include contained(25rem);
+    padding: 1.25rem;
+
+    @media (min-width: 768px) {
+        max-width: 28rem;
+        padding: 1.5rem;
+    }
+}
+
+main figure {
+    img {
+        border-radius: 0.9rem;
+    }
+
+    figcaption {
+        margin-left: 1.25rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
+
+        @include body-font($color: $color-white);
+    }
+
+    p {
+        margin-left: 1.25rem;
+
+        @include body-font(1.25rem, $color-white);
+    }
+}
+
+// Grid de productos (mouses.html)
+.grid-productos {
+    display: grid;
+    grid-template-areas:
+        "producto1"
+        "producto2";
+    gap: 1.8rem;
+    padding: 1.25rem;
+
+    > div {
+        &:nth-child(1) {
+            grid-area: producto1;
+        }
+
+        &:nth-child(2) {
+            grid-area: producto2;
+        }
+    }
+
+    @media (min-width: 768px) {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "producto1 producto2";
+    }
+}

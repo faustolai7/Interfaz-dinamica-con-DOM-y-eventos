@@ -1,0 +1,37 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+
+// ==== FORMULARIOS ====
+
+.maincontact form {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+    align-items: center;
+
+    fieldset {
+        margin-top: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 34rem;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 38rem;
+    }
+}
+
+.form-control {
+    background-color: $color-bg-input;
+    color: $color-neon;
+    border: 1px solid $color-neon;
+
+    @include neon-focus;
+
+    &::placeholder {
+        color: $color-placeholder;
+    }
+}
